@@ -1,0 +1,50 @@
+Source: lua-yaml
+Section: interpreters
+Priority: optional
+Maintainer: Victor Seva <vseva@debian.org>
+Uploaders:
+ Enrico Tassi <gareuselesinge@debian.org>,
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-lua (>= 16~),
+ libyaml-dev,
+Standards-Version: 4.5.0.1
+Vcs-Git: https://salsa.debian.org/lua-team/lua-yaml.git
+Vcs-Browser: https://salsa.debian.org/lua-team/lua-yaml/
+Homepage: https://github.com/gvvaughan/lyaml
+
+Package: lua-yaml
+Architecture: any
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ libyaml-dev,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Provides:
+ ${lua:Provides},
+XB-Lua-Versions: ${lua:Versions}
+Description: LibYAML binding for Lua
+ fast C implementation for converting between %YAML 1.1
+ and Lua tables, and a low-level YAML event parser for
+ implementing more intricate YAML document loading.
+
+Package: lua-yaml-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ lua-yaml (= ${binary:Version}),
+ ${misc:Depends},
+Provides:
+ ${lua:Provides},
+XB-Lua-Versions: ${lua:Versions}
+Description: docs and test files for lua-yaml
+ fast C implementation for converting between %YAML 1.1
+ and Lua tables, and a low-level YAML event parser for
+ implementing more intricate YAML document loading.
+ .
+ This package contains docs and test files.
